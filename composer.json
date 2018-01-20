@@ -10,7 +10,7 @@
         "laravel/framework": "5.2.*",
         "mews/captcha": "^2.1",
         "ignited/laravel-omnipay": "2.*",
-        "lokielse/omnipay-alipay": "dev-master",
+        "gregwar/captcha": "1.*",
         "latrell/alipay": "dev-master"
     },
     "require-dev": {

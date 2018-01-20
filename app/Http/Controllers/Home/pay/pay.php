@@ -72,8 +72,8 @@ class pay extends Controller
                 $alipay = app('alipay.web');
                 $alipay->setOutTradeNo($res->order_id);
                 //支付金额
-                $alipay->setTotalFee($res->total);
-//                $alipay->setTotalFee(0.01);
+//                $alipay->setTotalFee($res->total);
+                $alipay->setTotalFee(0.01);
                 //商品信息
                 $alipay->setSubject('kandle书城' . $res->time . '个月会员');
                 // 商品描述
@@ -125,9 +125,12 @@ class pay extends Controller
         $data = [];
         // 验证请求。
         if (!app('alipay.web')->verify()) {
-            Log::notice('Alipay return query data verification fail.', [
-                'data' => Request::getQueryString()
-            ]);
+            $data =  Request::getQueryString();
+//            dump($data);
+//            exit;
+//            Log::notice('Alipay return query data verification fail.', [
+//                'data' =>
+//            ]);
             return view('error')->with([' error' => '支付失败', 'url' => 'prepay']);
         }
 
@@ -140,6 +143,7 @@ class pay extends Controller
                 DB::table('order')
                     ->where('order_id', '=', $data['out_trade_no'])
                     ->update(['status' => $data['payment_type'], 'buyer_email' => $data['buyer_email'], 'trade_no' => $data['trade_no'], 'notify_time' => $data['notify_time']]);
+
                 break;
         }
         return view('success')->with(['success' => '支付成功', 'url' => 'index']);

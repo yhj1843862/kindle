@@ -1,12 +1,11 @@
 <!DOCTYPE HTML>
 <html>
-<include file="Common/header"/>
+@include('Admin.Common.header')
 <body>
 <article class="page-container">
-    <form action="" method="post" class="form form-horizontal" id="form-member-add">
+    <form action=""  class="form form-horizontal" id="form-member-add">
 
         <div class="row cl">
-
             <label class="form-label col-xs-4 col-sm-3">
                 <span class="c-red">*</span>节点的名称：
             </label>
@@ -16,26 +15,9 @@
         </div>
 
         <div class="row cl">
-
-            <label class="form-label col-xs-4 col-sm-3">
-                <span class="c-red">*</span>模块：
-            </label>
+            <label class="form-label col-xs-4 col-sm-3">路由名称：</label>
             <div class="formControls col-xs-4 col-sm-5">
-                <input type="text" class="input-text" id="module">
-            </div>
-        </div>
-
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3">控制器：</label>
-            <div class="formControls col-xs-4 col-sm-5">
-                <input type="text" class="input-text" id="controller">
-            </div>
-        </div>
-
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-3">方法：</label>
-            <div class="formControls col-xs-4 col-sm-5">
-                <input type="text" class="input-text" id="action">
+                <input type="text" class="input-text" id="routes">
             </div>
         </div>
 
@@ -50,28 +32,27 @@
     </form>
 </article>
 
-<include file="Common/footer"/>
+@include('Admin.Common.footer')
 <script>
     $(function () {
 
         $('#subBtn').click(function () {
             var node_name = $('#node_name').val();
-            var module = $('#module').val();
-            var controller = $('#controller').val();
-            var action = $('#action').val();
+//            var module = $('#module').val();
+//            var controller = $('#controller').val();
+            var route = $('#routes').val();
 
-            $.post('',{node_name:node_name,module:module,controller:controller,action:action},function (e) {
+            $.post('',{node_name:node_name,routes:route},function (e) {
+//                console.log(e);
                 if(e.status)
                 {
+                    alert(e.info);
                     window.location.reload();
                 }else {
-                    errorAlert(e.info);
+                    alert(e.info);
                 }
             })
-
-
         });
-
     });
 
 </script>

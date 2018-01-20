@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers\Admin\Order;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
@@ -17,19 +15,15 @@ class OrderController extends Controller
      */
     public function order_lists(Request $request)
     {
-        $res = $request->all();
-        $data = DB::table('order')
-            ->join('user', 'order.user_id', '=', 'user.user_id')
-            ->select('order.*', 'user.nickname');
-         $count = $data->count();
-
-        if (empty($res['nickname']))
-        {
-            $page = $data->paginate(2);
-        }else{
-            $page = $data->where('nickname','like',$res['nickname'].'%')->paginate(2);
+        if ($request->isMethod('get')) {
+            $data = DB::table('order')
+                ->join('user', 'order.user_id', '=', 'user.user_id')
+                ->select('order.*', 'user.nickname');
+            $count = $data->count();
+            $page = $data->paginate(10);
+            return view('Admin/Order/order_lists')->with('num', $count)->with('page', $page);
         }
-        return view('Admin/Order/order_lists')->with('num',$count)->with('page',$page);
+
     }
 
     public function order_del($id)

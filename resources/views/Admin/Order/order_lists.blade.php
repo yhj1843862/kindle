@@ -38,9 +38,9 @@
                 <td><input type="checkbox" value="" name=""></td>
                 <td>{{$v->order_id}}</td>
                 <td>{{$v->nickname}}</td>
-                <td>{{$v->book_name}}</td>
-                <td>{{$v->number}}</td>
-                <td>{{$v->price}}</td>
+                {{--<td>{{$v->book_name}}</td>--}}
+                {{--<td>{{$v->number}}</td>--}}
+                {{--<td>{{$v->price}}</td>--}}
                 <td>{{$v->total}}</td>
                 <td>
                     @if($v->status == 1 )

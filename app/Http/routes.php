@@ -17,17 +17,18 @@
  * ==================================================================
  */
 Route::group(['namespace' => 'Home'], function () {
+
+    //登录
+    Route::any('login', 'Sign\Sign@login');
+    //注册
+    Route::any('register', 'Sign\Sign@register');
     //首页
     Route::get('/', 'Index\Index@index');
     //搜索
     Route::any('search', 'Index\search@search');
     Route::get('index', 'Index\Index@index');
-    //登录
-    Route::any('login', 'Sign\Sign@login');
     //退出
     Route::any('exit', 'Sign\Sign@logout');
-    //注册
-    Route::any('register', 'Sign\Sign@register');
     //协议
     Route::any('agreement', function () {
         return view('Home/pay/agreement');
@@ -55,6 +56,8 @@ Route::group(['namespace' => 'Home'], function () {
     //支付宝支付处理
     Route::any('webNotify', 'pay\pay@webNotify');
     Route::any('webReturn', 'pay\pay@webReturn');
+});
+Route::group(['namespace'=>'Home', 'middleware'=>'home.session'], function (){
     //个人中心
     Route::any('person', 'Personal\personal@person');
 });
@@ -74,15 +77,20 @@ Route::any('test', function () {
  */
 
 Route::group(['namespace' => 'Admin'], function () {
+
+    //后台登录
+    Route::any('adminlogin', 'Sign\LoginController@login');
+    //退出登录
+    Route::get('logout', 'Sign\LoginController@logout');
+});
+
+Route::group(['namespace'=>'Admin', 'middleware'=>'admin.session'], function () {
     //后台首页
     Route::get('admin', 'Index\Index@index')->middleware('test_mid');
     Route::get('welcome', function () {
         return view('Admin/Index/welcome');
     });
-    //后台登录
-    Route::any('adminlogin', 'Sign\LoginController@login');
-    //退出登录
-    Route::get('logout', 'Sign\LoginController@logout');
+
 
     //用户列表
     Route::any('listK/{id}', 'User\User@lists');
@@ -94,12 +102,8 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::any('add_admin', 'admin\AdminController@add_admin');
     //权限管理
     Route::any('power_lists', 'Power\PowerController@power_lists');
-    Route::any('role_node', 'Power\PowerController@role_node');
+    Route::any('role_node/{id}', 'Power\PowerController@role_node');
     Route::any('add_node', 'Power\PowerController@add_node');
-    //后端会员添加
-    Route::any('add_vip', 'vip\UserController@add');
-    //后端会员列表
-    Route::any('vip_lists', 'vip\UserController@lists');
     //积分列表
     Route::any('score_lists', 'Score\ScoreController@lists');
     //书籍添加
@@ -120,6 +124,7 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::any('order_lists', 'Order\OrderController@order_lists');
     Route::any('order_del/{id}', 'Order\OrderController@order_del');
 });
+
 /**
  * ================================================================
  */

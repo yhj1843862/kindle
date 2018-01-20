@@ -53,18 +53,23 @@
                         <a data-href="{{url('listK')}}/id" data-title="用户列表" href="javascript:void(0)">用户列表</a>
                         <a data-href="{{url('admin_list')}}" data-title="管理员列表" href="javascript:void(0)">管理员列表</a>
                         <a data-href="{{url('add_admin')}}" data-title="添加管理员" href="javascript:void(0)">添加管理员</a>
-                        <a data-href="{{url('power_lists')}}" data-title="权限管理" href="javascript:void(0)">权限管理</a>
+                        {{--<a data-href="{{url('power_lists')}}" data-title="权限管理" href="javascript:void(0)">权限管理</a>--}}
                     </li>
                 </ul>
             </dd>
         </dl>
-        <dl id="menu-role">
-            <dt><i class="Hui-iconfont">&#xe62d;</i> 会员管理<i
-                        class="Hui-iconfont menu_dropdown-arrow Hui-iconfont-arrow2-bottom"></i></dt>
+
+        <dl id="menu-power">
+            <dt>
+                <i class="Hui-iconfont">&#xe6d3;</i> 权限管理
+                <i class="Hui-iconfont menu_dropdown-arrow Hui-iconfont-arrow2-bottom"></i>
+            </dt>
             <dd>
                 <ul>
-                    <li><a data-href="{{url('add_vip')}}" data-title="添加会员" href="javascript:void(0)">添加会员</a></li>
-                    <li><a data-href="{{url('vip_lists')}}" data-title="会员列表" href="javascript:void(0)">会员列表</a></li>
+                    <li>
+                        <a data-href="{{url('add_node')}}" data-title="添加节点" href="javascript:void(0)">添加节点</a>
+                        <a data-href="{{url('power_lists')}}" data-title="权限设置" href="javascript:void(0)">权限设置</a>
+                    </li>
                 </ul>
             </dd>
         </dl>

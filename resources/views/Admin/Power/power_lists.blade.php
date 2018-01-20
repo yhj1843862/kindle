@@ -18,18 +18,18 @@
             </tr>
             </thead>
             <tbody>
-          @foreach($lists as $v)
+            @foreach($lists as $v)
                 <tr class="text-c">
                     <td>{{$v->role_id}}</td>
                     <td>{{$v->role_name}}</td>
                     <td class="f-14 td-manage">
-                        <a onClick="Hui_admin_tab(this)" data-href="{{url('role_node')}}" href="javascript:;" data-title="权限配置{{$v->role_name}}">权限配置
+                        <a onClick="Hui_admin_tab(this)" data-href="{{url('role_node')}}/{{$v->role_id}}" href="javascript:;" data-title="权限配置({{$v->role_name}})"><i class="Hui-iconfont">&#xe61d;</i>
                         </a>
                         {{--<a onClick="Hui_admin_tab(this)" data-href="{:U('Access/role_node',['id'=>$v['role_id']])}" href="javascript:;" data-title="权限配置（{$v.role_name}）">权限配置--}}
                         {{--</a>--}}
                     </td>
                 {{--</tr>--}}
-           @endforeach
+            @endforeach
             </tbody>
         </table>
 

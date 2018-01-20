@@ -157,7 +157,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Mews\Captcha\CaptchaServiceProvider::class,
-        'Latrell\Alipay\AlipayServiceProvider',
+         'Latrell\Alipay\AlipayServiceProvider',
 
     ],
 
@@ -206,7 +206,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
-//	    'Captcha' => Mews\Captcha\Facades\Captcha::class,
 
 
     ],

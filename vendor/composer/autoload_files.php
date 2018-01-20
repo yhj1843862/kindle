@@ -17,6 +17,5 @@ return array(
     'f0906e6318348a765ffb6eb24e0d0938' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
     '58571171fd5812e6e447dce228f52f4d' => $vendorDir . '/laravel/framework/src/Illuminate/Support/helpers.php',
     '5e8fe2a5ffaded85af682684fe3bbf5a' => $vendorDir . '/mews/captcha/src/helpers.php',
-    '155488b065c09907a03c24fc72a78307' => $vendorDir . '/lokielse/omnipay-alipay/src/Common/helpers.php',
     'c7a30ad2fd3d198cdc58d9fb1f8a7ed4' => $baseDir . '/app/function.php',
 );

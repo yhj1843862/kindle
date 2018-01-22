@@ -5,6 +5,11 @@
     <link rel="stylesheet" type="text/css" href="/static/css/stylebook.css">
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
     @include('Home.Common.head')
+    <style>
+        #nav-li-zl {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 @include('Home.Common.nav')
@@ -27,7 +32,8 @@
                                 <div class="col-box">
                                     <div class="col-img">
                                         <a href="" class="col-a" id="{{$v->book_id}}">{{$v->cate_name}}</a>
-                                        <a href="{{url('book_detail',['id'=>$v->book_id])}}"><img src="{{$v->thumb}}"></a>
+                                        <a href="{{url('book_detail',['id'=>$v->book_id])}}"><img
+                                                    src="{{$v->thumb}}"></a>
                                     </div>
                                     <h3>{{$v->book_name}}</h3>
                                     <p>作者:
@@ -95,42 +101,52 @@
                 </ul>
             </div>
             {{--登录--}}
-            <div class="sidebar-entry">
-                <h1>登录是一种态度</h1>
-                <div class="entry-button">
-                    <a href="{{url('login')}}"> <input type="button" name="登录" id="" value="登录"></a>
-                    <a href="{{url('register')}}"><input type="button" name="注册" id="" value="注册"></a>
-                </div>
-            </div>
-            {{--推送服务,精品图书--}}
-            <div class="sidebar-tui">
-                <a href="https://push.bookfere.com" class="tui-t"></a>
-                <a href="https://bookfere.com/share" class="tui-b"></a>
-            </div>
-            <div class="Kindle">
-                <h1>Kindle 内容管理</h1>
-                <ul id="Kindle-box">
-                    @foreach($arr as $kd)
-                        <li class="Kindle-content">
-                            <a href="{{$kd->href}}"
-                               style="padding: 0px;background-image: url('{{$kd->url}}');">{{$kd->name}}</a>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-            <div class="goodwill">
-                <div class="goodwill-speedbar">
-                    <div class="goodwill-toptip">
-                        <ul>
-                            <li><span>[匿名]</span><span>10000$</span><span>2017-11-28</span></li>
-                            <li><span>[匿名]</span><span>20000$</span><span>2017-11-30</span></li>
-                        </ul>
+            @if(empty($nickname))
+                <div class="sidebar-entry">
+                    <h1>登录是一种态度</h1>
+                    <div class="entry-button">
+                        <a href="{{url('login')}}"> <input type="button" name="登录" id="" value="登录"></a>
+                        <a href="{{url('register')}}"><input type="button" name="注册" id="" value="注册"></a>
                     </div>
                 </div>
-                <div class="goodwill-ai">
-                    <span>让金钱为有意义的事出一份力：</span><a href="">立即捐助 >></a>
+            @else
+                <div class="sidebar-entry" >
+                    <h1>用户: <span id="nick"> {{$nickname}}</span></h1>
+                    <div class="entry-button-user" id="">
+                        <a href="{{url('person')}}"><input type="button" name="个人中心" id="" value="个人中心"></a>
+                        <a href="exit"><input type="button" name="退出" id="" value="退出"></a>
+                    </div>
                 </div>
-            </div>
+            @endif
+                {{--推送服务,精品图书--}}
+                <div class="sidebar-tui">
+                    <a href="https://push.bookfere.com" class="tui-t"></a>
+                    <a href="https://bookfere.com/share" class="tui-b"></a>
+                </div>
+                <div class="Kindle">
+                    <h1>Kindle 内容管理</h1>
+                    <ul id="Kindle-box">
+                        @foreach($arr as $kd)
+                            <li class="Kindle-content">
+                                <a href="{{$kd->href}}"
+                                   style="padding: 0px;background-image: url('{{$kd->url}}');">{{$kd->name}}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="goodwill">
+                    <div class="goodwill-speedbar">
+                        <div class="goodwill-toptip">
+                            <ul>
+                                <li><span>[匿名]</span><span>10000$</span><span>2017-11-28</span></li>
+                                <li><span>[匿名]</span><span>20000$</span><span>2017-11-30</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="goodwill-ai">
+                        <span>让金钱为有意义的事出一份力：</span><a href="">立即捐助 >></a>
+                    </div>
+                </div>
         </aside>
     </div>
     {{--书单广场--}}

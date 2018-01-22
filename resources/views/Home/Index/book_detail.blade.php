@@ -5,7 +5,14 @@
     <link rel="stylesheet" type="text/css" href="/static/css/stylebooks.css">
     <script src="/static/js/jquery.min.js"></script>
     <script src="/static/ui/lib/layer/2.4/layer.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/stylebook.css">
     @include('Home.Common.head')
+    <style>
+        #nav-li-zl {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 @include('Home.Common.nav')
@@ -14,7 +21,6 @@
     @include('Home.Common.tips')
     <div id="books">
         <div class="books-wrap">
-
             <div class="books-top">
                 <p><span>当前位置:</span><a href="">首页</a><span>>></span>
                     @foreach($list as $v)
@@ -165,13 +171,24 @@
                     </li>
                 </ul>
             </div>
-            <div class="sidebar-entry">
-                <h1>登录是一种态度</h1>
-                <div class="entry-button">
-                    <a href="{{url('login')}}"> <input type="button" name="登录" id="" value="登录"></a>
-                    <a href="{{url('register')}}"><input type="button" name="注册" id="" value="注册"></a>
+            {{--登录--}}
+            @if(empty($nickname))
+                <div class="sidebar-entry">
+                    <h1>登录是一种态度</h1>
+                    <div class="entry-button">
+                        <a href="{{url('login')}}"> <input type="button" name="登录" id="" value="登录"></a>
+                        <a href="{{url('register')}}"><input type="button" name="注册" id="" value="注册"></a>
+                    </div>
                 </div>
-            </div>
+            @else
+                <div class="sidebar-entry" >
+                    <h1>用户: <span id="nick"> {{$nickname}}</span></h1>
+                    <div class="entry-button-user" id="">
+                        <a href="{{url('person')}}"><input type="button" name="个人中心" id="" value="个人中心"></a>
+                        <a href="exit"><input type="button" name="退出" id="" value="退出"></a>
+                    </div>
+                </div>
+            @endif
             <div class="sidebar-tui">
                 <a href="https://push.bookfere.com" class="tui-t"></a>
                 <a href="https://bookfere.com/share" class="tui-b"></a>

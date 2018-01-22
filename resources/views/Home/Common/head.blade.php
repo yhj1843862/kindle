@@ -6,6 +6,7 @@
 <meta name="description" content="kindle 书城,kindle 书城">
 <script type="text/javascript" src="/static/js/jquery.min.js"></script>
 <script type="text/javascript" src="/static/js/js.js"></script>
+<link rel="stylesheet" href="/static/css/style.css">
 <style>
     .nav-li > a {
         display: inline-block;

@@ -6,8 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/static/css/stylebookclass.css">
     <script type="text/javascript" src="/static/js/jquery.min.js"></script>
     <script type="text/javascript" src="/static/js/js.js"></script>
-    <style type="text/css">
-    </style>
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
 @include('Home.Common.nav')

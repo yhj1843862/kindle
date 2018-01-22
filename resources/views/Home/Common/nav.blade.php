@@ -17,21 +17,29 @@
                 <a href="{{url('push')}}">推送须知</a>
             </li>
             <li id="" class="nav-li">
-                <a href="{{url('prepay')}}" >充值VIP</a>
+                <a href="{{url('prepay')}}">充值VIP</a>
             </li>
             <li id="personal" class="nav-li">
-                <a href="{{url('person')}}" >个人中心</a>
+                <a href="{{url('person')}}">个人中心</a>
             </li>
             <li id="nav-li">
-                <form action="{{url('search')}}" method="post" >
-                    {{--<span></span>--}}
-                    <button type="submit" style="border: none; background: rgba(74, 74, 74, 0);"><span></span></button>
+                <form action="{{url('search')}}" method="post">
+                    <button type="submit" style="border: none; background: rgba(74, 74, 74, 0);"><span></span>
+                    </button>
                     <div id="nav-input">
                         <input type="text" name="search" id="">
                     </div>
                 </form>
             </li>
-
+            @if(empty($nickname))
+                <li id="nav-li-zl">
+                    <div><span><a href="{{url('login')}}">登录</a></span><span>|</span><span><a href="{{url('register')}}">注册</a></span></div>
+                </li>
+            @else
+                <li id="nav-li-zl">
+                    <div><span>用户: {{$nickname}}</span><span><a href="{{url('exit')}}">退出</a></span></div>
+                </li>
+            @endif
         </ul>
     </div>
 </div>

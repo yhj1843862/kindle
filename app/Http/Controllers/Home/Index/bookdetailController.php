@@ -17,14 +17,20 @@ class bookdetailController extends Controller
      */
     public function detail(Request $request,$id=null)
     {
-//        dd($id);
+
+        if (empty(session('user_info'))){
+            $nickname = '';
+        }else{
+            $nickname = session('user_info')['nickname'];
+        }
+
         $detail = DB::table('book')->where('book_id','=',$id)
             ->leftJoin('category','book.category','=','category.cate_id')
             ->leftJoin('type','book.type','=','type.type_id')->get();
 
         $data['list'] = $detail;
         $arr = DB::table('set')->get();
-        return view('Home/Index/book_detail',$data)->with(['arr'=>$arr]);
+        return view('Home/Index/book_detail',$data)->with(['nickname'=>$nickname,'arr'=>$arr]);
 
     }
 

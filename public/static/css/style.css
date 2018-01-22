@@ -1,834 +1,169 @@
-* {
-    margin: 0;
-    padding: 0;
-}
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		a{
+			text-decoration:none;
+			color: #fff;
+		}
+		ul{
+			list-style: none;	
+		}
+		body{
+			width: 100%;
+			height: 100%;
+			background: #fbfaf8;
+		}
+		/* header */
+
+		#header{
+			min-width: 975px;
+			position: relative;
+			width: 100%;
+			height: 230px;
+			background: url(../images/Slide.jpg)center 0px repeat-x;
+			background-position: 0px -300px;
+			background-size: cover;
+			text-align: center;
+			overflow: hidden;
+		}
+		#header a{
+			color: #fff;
+		}
+		#header-logo{
+			width: 100%;
+		}
+		#header-logo h1{
+			height: 170px;
+			width: 250px;
+			margin:  25px auto;
+			line-height: 100px;
+			background: url(../images/psd.png) no-repeat;
+			background-position: center;
+		}
+		/*~~~导航~~~*/
+		#header #nav{
+			min-width: 975px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 56px;
+			background: rgba(74,74,74,0.9);
+		}
+		#header #nav ul{
+			height: 56px;
+			max-width: 1130px;
+			margin: 0 auto;
+		}
+		#header #nav .nav-li:hover{
+			background-color: rgba(0,0,0,0.5);
+			overflow: hidden;
+		}
+		#header .nav-li{
+			width: 100px;
+			height: 56px;
+			line-height: 56px;
+			float: left;
+		}
+
+		#header #nav #nav-li{
+			float: right;
+			height: 56px;
+			font-size: 0;
+		}
+		#header #nav-li span{
+			display: inline-block;
+			width: 56px;
+			height: 56px;
+			vertical-align:middle;
+			background: url(../images/nav.png) no-repeat;
+			background-position: center;
+		}
+		#header #nav-input{
+			display: inline-block;
+			height: 56px;
+			width: 0px;
+			vertical-align:middle;
+			line-height: 65px;
+			overflow: hidden;
+			transition:1s;
+		}
+		#header input{
+			height: 25px;
+			width: 130px;
+			color: #000;
+		}
+		#header #nav-li:hover #nav-input{
+			transition:1s;
+			width: 150px;
+		}
+		#nav-li-zl{
+			float: right;
+			height: 100px;
+			line-height: 56px;
+			display: inline-block;
+		}
+		#nav-li-zl span{
+			color: #fff;
+			padding: 0 5px;
+		}
+	/*footer*/
+		.footer{
+			width: 100%;
+			height: 164px;
+			background-color: rgba(0,0,0,0.7);
+			padding: 10px;
+			box-sizing:border-box;
+			position: relative;
+		}
+		.footer-content{
+			min-width: 975px;
+			width: 1200px;
+			margin: 10px auto;
+			color: #fff;
+		}
+		.footer-content>div{
+			vertical-align: top;
+			display: inline-block;
+		}
+		.footer-content ul li{
+			float: left;
+			margin-left: 10px;
+		}
+		.footer-content ul li img{
+			width: 120px;
+			height: 120px;
+		}
+		.footer a{
+			color: #fff;
+		}
+		.fo-p{
+			margin-left: 10px;
+		}
+		.fo-p p{
+			height: 25px;
+			line-height: 25px;
+		}
 
-a {
-    text-decoration: none;
-    color: #fff;
-}
+	
 
-ul {
-    list-style: none;
-}
 
-body {
-    width: 100%;
-    height: 100%;
-    background: #fbfaf8;
-}
 
-/*~~~logo~~~*/
-#header {
-    min-width: 975px;
-    position: relative;
-    width: 100%;
-    height: 230px;
-    background: url('/static/images/Slide.jpg') center 0px repeat-x;
-    background-position: 0px -300px;
-    background-size: cover;
-    text-align: center;
-    overflow: hidden;
-}
 
-#header-logo {
-    width: 100%;
-}
 
-#header-logo h1 {
-    height: 170px;
-    width: 250px;
-    margin: 25px auto;
-    line-height: 100px;
-    background: url(/static/images/psd.png) no-repeat;
-    background-position: center;
-}
 
-/*~~~导航~~~*/
-#nav {
-    min-width: 975px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 56px;
-    background: rgba(74, 74, 74, 0.9);
-}
 
-#nav ul {
-    height: 56px;
-    max-width: 1130px;
-    margin: 0 auto;
-}
 
-#nav ul li:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-}
 
-.nav-li {
-    width: 100px;
-    height: 56px;
-    line-height: 56px;
-    float: left;
-}
 
-#nav #nav-li {
-    float: right;
-    height: 56px;
-    font-size: 0;
-}
 
-#nav-li span {
-    display: inline-block;
-    width: 56px;
-    height: 56px;
-    vertical-align: middle;
-    background: url(/static/images/nav.png) no-repeat;
-    background-position: center;
-}
 
-#nav-input {
-    display: inline-block;
-    height: 56px;
-    width: 0;
-    vertical-align: middle;
-    line-height: 66px;
-    overflow: hidden;
-    transition: 1s;
-}
 
-#nav-li:hover #nav-input {
-    transition: 1s;
-    width: 150px;
-}
 
-/*~~~内容区~~~*/
-#content {
-    min-width: 975px;
-    margin-bottom: 10px;
-    position: relative;
-    margin: 0 auto;
-    max-width: 1130px;
-    text-align: left;
-    /*overflow: hidden;*/
-}
 
-#content:after {
-    content: "";
-    display: block;
-    clear: both;
-}
 
-/*~~~广告~~~*/
-.speedbar {
-    min-width: 975px;
-    background-image: url(/static/images/volume.png);
-    background-position: 1% 50%;
-    background-repeat: no-repeat;
-    clear: both;
-    overflow: hidden;
-    margin-bottom: 10px;
-    padding: 8px 20px 18px;
-    height: 15px;
-    /*background-color: #fff;*/
-    color: #666;
-    line-height: 25px;
-}
 
-#callboard ul {
-    margin-left: 15px;
-    overflow: hidden;
-    height: 70px;
-}
 
-#callboard li {
-    margin-bottom: 10px;
-    overflow: hidden;
-    height: 25px;
-}
 
-/*~~~books~~~*/
-#books {
-    min-width: 975px;
-    display: flex;
-}
 
-.books-wrap {
-    flex: 4;
-    min-width: 616px;
-    float: left;
-    height: 100%;
-}
-
-.books-top {
-    background: #fff;
-    height: 40px;
-    line-height: 40px;
-    padding: 0 10px;
-    margin-bottom: 10px;
-    display: flex;
-    box-sizing: border-box;
-    width: 100%;
-}
-
-.books-top h1 {
-    flex: 1;
-    width: 100px;
-    font-size: 20px;
-    margin-left: 0;
-}
-
-.books-top a {
-    text-align: right;
-    flex: 1;
-    color: #111;
-    margin-right: 0;
-}
-
-#books-contentsm {
-    /*max-width: 886px;*/
-    /*margin-right: 340px;
-    background-color: #fff;*/
-    margin-bottom: 10px;
-    /*background:#f4f2ef;*/
-}
-
-#books-cardslist {
-    /*background: #f4f2ef;*/
-    overflow: hidden;
-    clear: both;
-    display: inline-block;
-    height: 528px;
-}
-
-.col {
-    float: left;
-    padding-bottom: 20px;
-    padding: 4px;
-}
-
-.col-box:hover {
-    box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.5);
-}
-
-.col-box {
-    background-color: #FFF;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .15);
-    overflow: hidden;
-    position: relative;
-    border: 10px solid #FFF;
-    border-bottom: 0 none;
-}
-
-.col-img {
-    position: relative;
-}
-
-#books-contentsm .col-a {
-    font-size: 12px;
-    position: absolute;
-    top: 8px;
-    left: 0;
-    padding: 5px 5px;
-    width: 60px;
-    text-align: center;
-    background: #333;
-    opacity: .8;
-    color: #fff;
-}
-
-#books-contentsm .col-a:hover {
-    opacity: 1;
-}
-
-#books-contentsm img, #books-two-cardslist img {
-    width: 126px;
-    height: 167px;
-}
-
-#books-contentsm a, h3, #books-two-cardslist a, h3, #books-three-contentsm a, h3 {
-    color: #111;
-}
-
-#books-contentsm h3:hover, #books-two-cardslist h3:hover, #books-three-contentsm h3:hover {
-    color: orange;
-}
-
-#books-contentsm h3, #books-two-cardslist h3, #books-three-contentsm h3 {
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 25px;
-    height: 25px;
-    overflow: hidden;
-}
-
-#books-contentsm p, #books-three-contentsm p {
-    font-size: 12px;
-    line-height: 20px;
-    font-weight: 400;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    padding-bottom: 10px;
-}
-
-#books-contentsm p a:hover, #books-two-cardslist p a:hover, #books-three-contentsm p a:hover {
-    color: orange;
-}
-
-/*~~~侧栏~~~~*/
-.sidebar {
-    flex: 1;
-    margin-left: 10px;
-    position: relative;
-    width: 300px;
-}
-
-.sidebar-two {
-    text-align: center;
-    clear: both;
-    height: 40px;
-    margin-bottom: 10px;
-    background-color: #fff;
-}
-
-.sidebar-two ul {
-    height: 40px;
-    display: flex;
-}
-
-.sidebar-two li {
-    position: relative;
-    height: 40px;
-    flex: 1;
-    display: inline-block;
-    border-right: 1px solid #eee;
-    background-image: url(/static/images/sns.png);
-    background-repeat: no-repeat;
-}
-
-.sidebar-two-box {
-    display: none;
-    position: absolute;
-    bottom: -185px;
-    left: -36.3px;
-    width: 181px;
-    height: 191px;
-}
-
-.sidebar-two-i {
-    width: 0;
-    height: 0;
-    border-width: 0 10px 10px;
-    border-style: solid;
-    margin: 0px auto;
-    position: relative;
-}
-
-.sidebar-two-content {
-    width: 181px;
-    height: 181px;
-    border: 3px solid #3cb034;
-    box-sizing: border-box;
-    background-color: #ccc;
-    overflow: hidden;
-}
-
-.sidebar-two-content img {
-    width: 100%;
-}
-
-.i-1 .sidebar-two-i {
-    border-color: transparent transparent #3cb034; /*透明 透明  灰*/
-}
-
-.i-1 .sidebar-two-content {
-    border: 3px solid #3cb034;
-}
-
-.i-1:hover .sidebar-two-box {
-    display: block;
-}
-
-.i-2 .sidebar-two-i {
-    border-color: transparent transparent orange; /*透明 透明  灰*/
-}
-
-.i-2 .sidebar-two-content {
-    border: 3px solid orange;
-}
-
-.i-2:hover .sidebar-two-box {
-    display: block;
-}
-
-.i-2 .sidebar-two-box {
-    left: -42.3px;
-}
-
-.i-3 .sidebar-two-i {
-    border-color: transparent transparent red; /*透明 透明  灰*/
-}
-
-.i-3 .sidebar-two-content {
-    border: 3px solid red;
-}
-
-.i-3:hover .sidebar-two-box {
-    display: block;
-}
-
-.i-3 .sidebar-two-box {
-    left: -42.3px;
-}
-
-.i-1 {
-    background-position: center 0px;
-}
-
-.i-2 {
-    background-position: center -84px;
-}
-
-.i-3 {
-    background-position: center -168px;
-}
-
-.i-1:hover {
-    background-position: center -42px;
-}
-
-.i-2:hover {
-    background-position: center -126px;
-}
-
-.i-3:hover {
-    background-position: center -210px;
-}
-
-.sidebar-entry {
-    text-align: center;
-    clear: both;
-    height: 200px;
-    padding: 50px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-    background-color: #fff;
-    box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.5);
-}
-
-.sidebar-entry h1 {
-    color: #6a6f77;
-    width: 200px;
-    height: 33px;
-    padding-top: 10px;
-}
-
-.entry-button {
-    padding-top: 10px;
-}
-
-.entry-button input {
-    font-size: 1.4em;
-    width: 90px;
-    height: 35px;
-    border-radius: 4px;
-    border: 1px solid #c8cccf;
-    color: #6a6f77;
-    outline: 0;
-}
-
-.entry-button input:hover {
-    background: orange;
-    color: #fff;
-    border: 1px solid orange;
-}
-
-.sidebar-tui {
-    text-align: center;
-    height: 48px;
-    line-height: 48px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-    background-color: #fff;
-}
-
-.sidebar-tui a {
-    display: inline-block;
-    width: 147px;
-    height: 48px;
-    background-image: url(/static/images/booksx.png);
-}
-
-.tui-t {
-    background-position: 0px 0px;
-}
-
-.tui-t:hover {
-    background-position: 0px -48px;
-}
-
-.tui-b {
-    background-position: 0px -96px;
-}
-
-.tui-b:hover {
-    background-position: 0px 48px;
-}
-
-.Kindle {
-    text-align: left;
-    padding: 20px;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-    background-color: #fff;
-}
-
-.Kindle #Kindle-box {
-    display: flex;
-}
-
-.Kindle .Kindle-content li {
-    flex: 1;
-}
-
-.Kindle .Kindle-content a {
-    display: inline-block;
-    width: 68px;
-    height: 80px;
-    line-height: 142px;
-    background-repeat: no-repeat;
-    background-position: 15px 10px;
-    overflow: hidden;
-    color: #444;
-    text-align: center;
-}
-
-.goodwill-speedbar {
-    background-image: url(/static/images/heart.png);
-    background-position: 2% 50%;
-    background-size: 25px;
-    background-repeat: no-repeat;
-    clear: both;
-    overflow: hidden;
-    margin-bottom: 10px;
-    padding: 8px 20px 18px;
-    height: 15px;
-    background-color: rgba(255, 192, 203, 0.5);
-    color: #666;
-    line-height: 25px;
-    box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.5);
-}
-
-.goodwill-speedbar ul {
-    margin-left: 25px;
-    overflow: hidden;
-    height: 70px;
-}
-
-.goodwill-speedbar li {
-    margin-bottom: 10px;
-    overflow: hidden;
-    height: 25px;
-}
-
-.goodwill-speedbar li span {
-    margin-right: 15px;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-}
-
-.goodwill-ai a {
-    font-size: 13px;
-    color: red;
-}
-
-#books-two {
-    display: flex;
-    margin-bottom: 10px;
-}
-
-.books-two-top {
-    background: #fff;
-    height: 40px;
-    line-height: 40px;
-    padding: 0 0 0 10px;
-    margin-bottom: 10px;
-    display: flex;
-    box-sizing: border-box;
-    width: 100%;
-}
-
-.books-two-top-left {
-    flex: 1;
-}
-
-.books-two-top-left h1 {
-    display: inline-block;
-    width: 100px;
-    font-size: 20px;
-    margin-left: 0;
-}
-
-.books-two-top-left a {
-    display: inline-block;
-    text-align: right;
-    color: orange;
-    margin-right: 0;
-}
-
-.books-two-top-right {
-    flex: 1;
-    text-align: right;
-    text-align: -webkit-right;
-    text-align: -moz-center
-}
-
-.books-two-top-right ul {
-    border-right: 1px solid #eee;
-    width: 200px;
-    height: 40px;
-    display: flex;
-}
-
-.books-two-top-right ul li {
-    border-left: 1px solid #eee;
-    flex: 1;
-    height: 40px;
-}
-
-#books-two-contentsm {
-    overflow: hidden;
-    background-color: #fff;
-    position: relative;
-}
-
-#books-two-cardslist {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    position: relative;
-    width: 300%
-}
-
-#books-two-cardslist .col-a {
-    font-size: 12px;
-    position: absolute;
-    top: 8;
-    left: 0;
-    padding: 5px 5px;
-    width: 60px;
-    text-align: center;
-    background: #333;
-    opacity: .8;
-    color: #fff;
-}
-
-#books-two-cardslist > div {
-    flex: 1;
-    display: flex;
-}
-
-#books-two-cardslist .btc1 {
-    flex: 1;
-    background-color: #f4f2ef;
-    margin: 10px;
-    box-sizing: border-box;
-    padding: 2% 2%;
-}
-
-.btc1-box {
-    height: 167px;
-}
-
-.btc1-left {
-    vertical-align: top;
-    display: inline-block;
-    box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.5);
-}
-
-.btc1-right h1 {
-    line-height: 50px;
-    font-size: 20px;
-}
-
-.btc1-right p {
-    word-break: break-all;
-    font-size: 13px;
-    line-height: 20px;
-}
-
-.btc1-right02 {
-    height: 100%;
-    margin-left: 5px;
-    border-shadow: border-box;
-    width: 142px;
-    vertical-align: top;
-    display: inline-block;
-}
-
-@media screen and (max-width: 1023px) {
-    .btc1-right02 {
-        height: 100%;
-        width: 130px;
-        vertical-align: top;
-        display: inline-block;
-    }
-}
-
-#books-three {
-
-}
-
-.books-three-content {
-    display: flex;
-}
-
-#books-three-contentsm {
-    flex: 4;
-    float: left;
-}
-
-#books-three-contentsm img {
-    width: 126px;
-    height: 167px;
-}
-
-#books-three-contentsm .col-a {
-    font-size: 12px;
-    position: absolute;
-    top: 8;
-    left: 0;
-    padding: 5px 5px;
-    width: 60px;
-    text-align: center;
-    background: #333;
-    opacity: .8;
-    color: #fff;
-}
-
-.books-three-sidebar {
-    width: 240px;
-    background: #f4f2ef;
-}
-
-.sidebar-top {
-    position: relative;
-    display: flex;
-    margin: 0 auto;
-    width: 200px;
-
-}
-
-.sidebar-top > div {
-    height: 39px;
-    line-height: 39px;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-#s-i {
-    width: 10px;
-    height: 10px;
-    border-top: 1px solid #dbd4cd;
-    border-left: 1px solid #dbd4cd;
-    position: absolute;
-    top: 33px;
-    left: 43px;
-    background: #f4f2ef;
-    transform: rotate(45deg);
-}
-
-#week, #month {
-    flex: 1;
-    border-bottom: 1px solid #dbd4cd;
-}
-
-#week span {
-    border-left: 1px solid #dbd4cd;
-    height: 13px;
-}
-
-#week a, #month a {
-    font-weight: 700;
-    color: #333;
-    padding: 0 25px;
-    cursor: default;
-}
-
-.sidebar-content {
-    margin: 0 auto;
-    width: 200px;
-}
-
-.sidebar-content a {
-    color: #333;
-}
-
-.books-three-sidebar ol {
-    margin-bottom: 20px;
-}
-
-.books-three-sidebar ol li {
-    margin: 20px 0px 0px 30px;
-}
-
-.books-three-sidebar ol li div {
-    vertical-align: top;
-    display: inline-block;
-}
-
-.books-three-sidebar ol li div a {
-    display: block;
-    margin-bottom: 5px;
-}
-
-#sidebar-month {
-    display: none;
-}
-
-/*footer*/
-.footer {
-    width: 100%;
-    height: 164px;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    box-sizing: border-box;
-    position: relative;
-}
-
-.footer-content {
-    min-width: 975px;
-    width: 1000px;
-    margin: 10px auto;
-    color: #fff;
-}
-
-.footer-content > div {
-    vertical-align: top;
-    display: inline-block;
-}
-
-.footer-content ul li {
-    float: left;
-}
-
-.footer-content ul li img {
-    width: 120px;
-    height: 120px;
-}
-
-/*最后添加*/
-.btc1-right02 {
-    width: 142px;
-}
-.sidebar-content li{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 20px;
-}
-.sidebar-content li div p{
-    color: #afa298;
-    font-size: 14px;
-}

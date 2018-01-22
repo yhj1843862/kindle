@@ -13,10 +13,16 @@ class booklistsController extends Controller
     //
     public function lists(Request $request)
     {
+        if (empty(session('user_info'))){
+            $nickname = '';
+        }else{
+            $nickname = session('user_info')['nickname'];
+        }
+
         $res = DB::table('book')->paginate(4);
 //        print_r($res);
         $data['list'] = $res;
-        return view('Home/Index/book_lists',$data);
+        return view('Home/Index/book_lists',$data)->with(['nickname'=>$nickname]);
     }
 
     public function lists1(Request $request,$id=0)

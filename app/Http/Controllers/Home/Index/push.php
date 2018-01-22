@@ -15,6 +15,11 @@ class push extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function push(){
-        return view('Home/Index/push');
+        if (empty(session('user_info'))){
+            $nickname = '';
+        }else{
+            $nickname = session('user_info')['nickname'];
+        }
+        return view('Home/Index/push')->with(['nickname'=>$nickname]);
     }
 }

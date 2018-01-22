@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/static/css/userstyle.css">
     <link href="/static/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        #nav-li{
+        #nav-li-zl,#nav-li {
             display: none;
         }
     </style>

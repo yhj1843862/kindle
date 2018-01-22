@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Kindle书单(书单广场)</title>
     <link rel="stylesheet" type="text/css" href="/static/css/stylelist.css">
+    <link rel="stylesheet" href="/static/css/style.css">
     <script type="text/javascript" src="/static/js/jQuery.min.js"></script>
     <script type="text/javascript" src="/static/js/js.js"></script>
     <style type="text/css">

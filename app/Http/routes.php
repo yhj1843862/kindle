@@ -56,6 +56,8 @@ Route::group(['namespace' => 'Home'], function () {
     //支付宝支付处理
     Route::any('webNotify', 'pay\pay@webNotify');
     Route::any('webReturn', 'pay\pay@webReturn');
+    //发送我的 kindle
+    Route::any('sendMail','Mail\MailController@sendMail');
 });
 Route::group(['namespace'=>'Home', 'middleware'=>'home.session'], function (){
     //个人中心
@@ -66,7 +68,7 @@ Route::get('captcha/{tmp}', 'Home\Sign\Sign@captcha');
 //验证验证码
 Route::any('do_verify', 'Home\Sign\Sign@do_verify');
 Route::any('test', function () {
-    return view('Home/Sign/test');
+    return 'frfr';
 });
 /**
  * ================================================================

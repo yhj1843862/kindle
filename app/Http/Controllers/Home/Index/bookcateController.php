@@ -18,6 +18,12 @@ class bookcateController extends Controller
      */
     public function lists1($cate_id = 1)
     {
+        if (empty(session('user_info'))){
+            $nickname = '';
+        }else{
+            $nickname = session('user_info')['nickname'];
+        }
+
         $res1=DB::select('select * from kd_category');
         $res = DB::table('book')->where('category','=',$cate_id)->paginate(2);
 
@@ -27,7 +33,7 @@ class bookcateController extends Controller
         {
             return view('404')->with(['error'=>'该类书籍下没有书籍','url'=>'book_cate']);
         }
-        return view('Home/Index/book_cate',$data);
+        return view('Home/Index/book_cate',$data)->with(['nickname'=>$nickname]);
     }
 
 }
